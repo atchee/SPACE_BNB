@@ -8,7 +8,7 @@ genre_list = [
 ]
 
 genre_list.each do |name|
-  genre.create(name: name)
+  Genre.create(name: name)
 end
 
 user_list = [
@@ -19,7 +19,7 @@ user_list = [
 ]
 
 user_list.each do |user|
-  user.create(user)
+  User.create(user)
 end
 
 product_list = [
@@ -31,5 +31,5 @@ product_list = [
 ]
 
 product_list.each do |product|
-  product.create(product)
+  Product.create(product)
 end
