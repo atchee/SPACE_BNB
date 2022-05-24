@@ -1,17 +1,74 @@
-<%# <img carrousel> %>
+
 <div class="container">
-  <div>
-    <%= @product.name %>
-    <%= @product.capacity %>
-    <%= @product.place %>
+  <div class="tabs">
+    <h2><%= @product.name %></h1>
+    <p><%= @product.place %><p>
   </div>
 
-  <div>
-    <%= @product.price %>
-    <%# calendier des disponibilités%>
-  </div>
-
-  <%= link_to "Edit", edit_product_path(@product.id) %>
-  <%= link_to "Delete your #{@product.genre.name}", product_path(@product), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  <%= link_to "Back to all the products", products_path %>
+  <div class="carousel">
+	<figure>
+		<img src="https://source.unsplash.com/random/800x533/?space" alt="">
+		<img src="https://source.unsplash.com/random/800x533/?solarsystem" alt="">
+		<img src="https://source.unsplash.com/random/800x533/?star" alt="">
+		<img src="https://source.unsplash.com/random/800x533/?moon" alt="">
+		<img src="https://source.unsplash.com/random/800x533/?planet" alt="">
+		<img src="https://source.unsplash.com/random/800x533/?aerospace" alt="">
+		<img src="https://source.unsplash.com/random/800x533/?universe" alt="">
+		<img src="https://source.unsplash.com/random/800x533/?cosmos" alt="">
+	</figure>
+	<nav>
+		<button class="nav prev"><<</button>
+		<button class="nav next">>></button>
+	</nav>
 </div>
+
+  <div class="tabs-description">
+    <h2><%= @product.place %><h2>
+    <p><%= @product.capacity %> rooms<p>
+    <p><%= @product.description %></p>
+  </div>
+
+  <div>
+    <p><%= @product.price %> &#128125;<p>
+    <%# calendier des disponibilités%>
+    <%# button réservation%>
+    <%# nombre de nuit/price par nuit%>
+    <%# TOTAL%>
+  </div>
+
+  <%= link_to "Edit", edit_product_path(@product.id), class:"button" %>
+  <%= link_to "Delete your #{@product.genre.name}", product_path(@product), class:"button", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  <%= link_to "Back to all the products", products_path, class:"button" %>
+</div>
+
+<script>
+
+  var
+	carousel = document.querySelector('.carousel'),
+	figure = carousel.querySelector('figure'),
+	nav = carousel.querySelector('nav'),
+	numImages = figure.childElementCount,
+	theta =  2 * Math.PI / numImages,
+	currImage = 0
+;
+
+nav.addEventListener('click', onClick, true);
+
+function onClick(e) {
+	e.stopPropagation();
+
+	var t = e.target;
+	if (t.tagName.toUpperCase() != 'BUTTON')
+		return;
+
+	if (t.classList.contains('next')) {
+		currImage++;
+	}
+	else {
+		currImage--;
+	}
+
+	figure.style.transform = `rotateY(${currImage * -theta}rad)`;
+}
+
+</script>
