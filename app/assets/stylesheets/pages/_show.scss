@@ -80,6 +80,11 @@ $apothem: 482.842712474619px;
       box-shadow: 2px 2px 2px #88bfa464 ;
 			letter-spacing: 1px;
 			padding: 5px 10px;
+
+      &:hover {
+        background-color: none;
+        color : #88bfa4;
+      }
 		}
 	}
 
@@ -91,6 +96,17 @@ $apothem: 482.842712474619px;
   border-bottom: solid #88bfa4;
   box-shadow: 0px 2px #88bfa464 ;
   padding: 5px;
+  position: relative;
+
+  a {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 24px;
+    padding: 10px 0px;
+    margin: 0px;
+    writing-mode: vertical-rl;
+  }
 }
 
 .tabs-description {
@@ -113,6 +129,10 @@ $apothem: 482.842712474619px;
   box-shadow: 2px 2px 2px #88bfa464 ;
   letter-spacing: 1px;
   padding: 5px 10px;
+
+  &:hover {
+    background-color: #88bfa4;
+  }
 }
 
 a {

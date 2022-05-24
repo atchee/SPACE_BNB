@@ -4,6 +4,9 @@
   <div class="tabs">
     <h2><%= @product.name %></h1>
     <p><%= @product.place %><p>
+    <% if policy(@product).edit? %>
+    <%= link_to "+", product_path(@product), class:"button", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  <% end %>
   </div>
 
   <div class="carousel">
@@ -18,28 +21,39 @@
       <img src="https://source.unsplash.com/random/800x533/?cosmos" alt="">
     </figure>
 
-		<button class="nav prev"><<</button>
-		<button class="nav next">>></button>
-	</nav>
-</div>
-
-  <div class="tabs-description">
-    <h2><%= @product.place %><h2>
-    <p><%= @product.capacity %> rooms<p>
-    <p><%= @product.description %></p>
+    <nav>
+      <button class="button"><<</button>
+      <button class="button">>></button>
+    </nav>
   </div>
 
   <div>
-    <p><%= @product.price %> &#128125;<p>
-    <%# calendier des disponibilités%>
-    <%# button réservation%>
-    <%# nombre de nuit/price par nuit%>
-    <%# TOTAL%>
+    <div class="tabs-description">
+      <h2><%= @product.place %><h2>
+      <p><%= @product.capacity %> rooms<p>
+      <p><%= @product.description %></p>
+    </div>
+
+    <div>
+      <p><%= @product.price %> &#128125;<p>
+
+      <div>
+        <%= simple_form_for [@product, @rental] do |f| %>
+          <%= f.input :arrival_date %>
+          <%= f.input :departure_date %>
+          <%= f.submit %>
+      <% end %>
+      </div>
+
+      <%# nombre de nuit/price par nuit%>
+      <%# TOTAL%>
+    </div>
   </div>
 
-  <%= link_to "Edit", edit_product_path(@product.id), class:"button" %>
-  <%= link_to "Delete your #{@product.genre.name}", product_path(@product), class:"button", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  <%= link_to "Back to all the products", products_path, class:"button" %>
+  <% if policy(@product).edit? %>
+    <%= link_to "Edit", edit_product_path(@product.id), class:"button" %>
+  <% end %>
+  <%= link_to "Back", products_path, class:"button" %>
 </div>
 
 <script>
