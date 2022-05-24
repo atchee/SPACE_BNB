@@ -1,3 +1,9 @@
+puts "Cleaning up database..."
+Genre.destroy_all
+User.destroy_all
+Product.destroy_all
+puts "Database cleaned"
+
 genre_list = [
   "Iron planet",
   "Terrestrial rocky",
