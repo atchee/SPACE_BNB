@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit]
+  before_action :set_product, only: [:show, :edit, :destroy, :update]
+
 
   def index
     @products = policy_scope(Product)
@@ -22,10 +23,13 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    authorize @product
   end
 
   def update
-    @product = @product.save
+    authorize @product
+    @product.update(product_params)
+    redirect_to product_path(@product)
   end
 
   def show
@@ -33,7 +37,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
     authorize @product
     @product.destroy
     redirect_to products_path, status: :see_other

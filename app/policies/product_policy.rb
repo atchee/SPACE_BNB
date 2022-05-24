@@ -9,6 +9,10 @@ class ProductPolicy < ApplicationPolicy
     end
   end
 
+  def update?
+    record.user == user
+  end
+  
   def show?
     true
   end
