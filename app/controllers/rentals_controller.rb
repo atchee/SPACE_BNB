@@ -13,6 +13,13 @@ class RentalsController < ApplicationController
     end
   end
 
+  def destroy
+    @rental = Rental.find(params[:id])
+    @rental.destroy
+    redirect_to products_path, status: :see_other
+    authorize @rental
+  end
+
   private
 
   def rental_params

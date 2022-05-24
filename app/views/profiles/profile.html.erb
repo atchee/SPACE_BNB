@@ -26,8 +26,11 @@
     <h5>Arrival date : <%= rental.arrival_date %></h5>
     <h5>Departure date : <%= rental.departure_date %></h5>
     <h5>Product_id : <%= rental.product_id %></h5>
+     <div class= "btn btn-danger">
+      <%= link_to "Delete your booking", rental_path(rental), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+     </div>
     <% end %>
-  </div>
 
   </div>
+
 </div>
