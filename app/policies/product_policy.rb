@@ -8,4 +8,12 @@ class ProductPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def new?
+    create?
+  end
+
+  def create?
+    true
+  end
 end
