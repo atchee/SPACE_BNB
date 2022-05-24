@@ -29,7 +29,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-  ends
+    authorize @product
+  end
 
   def destroy
     @product = @product.destroy
