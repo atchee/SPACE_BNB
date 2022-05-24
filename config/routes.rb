@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: 'products#index'
 
+  get '/profile', to: 'profiles#profile'
+
   resources :products do
     resources :rentals, only: [:create]
   end
