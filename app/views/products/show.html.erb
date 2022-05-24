@@ -34,13 +34,13 @@
       <p><%= @product.description %></p>
     </div>
 
-    <div>
-      <p><%= @product.price %> &#128125;<p>
+    <div class="tabs-reservation">
+      <p><strong><%= @product.price %><strong> &#128125;/night<p>
 
-      <div>
+      <div class="tab-reservation-detail>
         <%= simple_form_for [@product, @rental] do |f| %>
-          <%= f.input :arrival_date %>
-          <%= f.input :departure_date %>
+          <%= f.input :arrival_date, id:"arrival" %>
+          <%= f.input :departure_date id:"departure"%>
           <%= f.submit %>
       <% end %>
       </div>
@@ -56,34 +56,35 @@
   <%= link_to "Back", products_path, class:"button" %>
 </div>
 
+
+
 <script>
-
   var
-	carousel = document.querySelector('.carousel'),
-	figure = carousel.querySelector('figure'),
-	nav = carousel.querySelector('nav'),
-	numImages = figure.childElementCount,
-	theta =  2 * Math.PI / numImages,
-	currImage = 0
-;
+    carousel = document.querySelector('.carousel'),
+    figure = carousel.querySelector('figure'),
+    nav = carousel.querySelector('nav'),
+    numImages = figure.childElementCount,
+    theta =  2 * Math.PI / numImages,
+    currImage = 0
+  ;
 
-nav.addEventListener('click', onClick, true);
+  nav.addEventListener('click', onClick, true);
 
-function onClick(e) {
-	e.stopPropagation();
+  function onClick(e) {
+    e.stopPropagation();
 
-	var t = e.target;
-	if (t.tagName.toUpperCase() != 'BUTTON')
-		return;
+    var t = e.target;
+    if (t.tagName.toUpperCase() != 'BUTTON')
+      return;
 
-	if (t.classList.contains('next')) {
-		currImage++;
-	}
-	else {
-		currImage--;
-	}
+    if (t.classList.contains('next')) {
+      currImage++;
+    }
+    else {
+      currImage--;
+    }
 
-	figure.style.transform = `rotateY(${currImage * -theta}rad)`;
-}
+    figure.style.transform = `rotateY(${currImage * -theta}rad)`;
+  }
 
 </script>
