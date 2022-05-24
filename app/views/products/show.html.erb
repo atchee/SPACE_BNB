@@ -1,1 +1,20 @@
-    <h1><%= @product.name %></h1>
+<%# <img carrousel> %>
+<h1>helo      s</h1>
+<div class="container">
+  <div>
+    <%= @product.name %>
+    <%= @product.capacity %>
+    <%= @product.place %>
+  </div>
+
+  <div>
+    <%= @product.price %>
+    <%# calendier des disponibilités%>
+  </div>
+
+  <%= link_to "Edit", edit_product_path(@product.id) %>
+  <%= link_to "Delete your #{@product.name}", product_path(@product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <%= link_to "Back to all the products", products_path %>
+</div>
+
+<%= console %>
