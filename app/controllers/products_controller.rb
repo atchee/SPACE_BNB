@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :destroy]
+  before_action :set_product, only: [:show, :edit, :destroy, :update]
 
   def index
     @products = policy_scope(Product)
@@ -22,14 +22,17 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    authorize @product
   end
 
   def update
-    @product = @product.save
+    authorize @product
+    @product.update(product_params)
+    redirect_to product_path(@product)
   end
 
   def show
-  ends
+  end
 
   def destroy
     @product = @product.destroy

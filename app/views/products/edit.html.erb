@@ -1,0 +1,12 @@
+<% if policy(@product).edit? %>
+  <h1>Edit your place </h1>
+  <%= simple_form_for(@product) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :capacity %>
+  <%= f.input :price %>
+  <%= f.input :place %>
+  <%= f.association :genre, collection: Genre.all.order(:name), prompt: "Choose a genre" %>
+  <%= f.submit %>
+  <% end %>
+<% end %>
