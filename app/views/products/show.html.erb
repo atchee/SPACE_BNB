@@ -27,21 +27,29 @@
     </nav>
   </div>
 
-  <div>
-    <div class="tabs-description">
+  <div class="tabs-information">
+    <div id="description">
       <h2><%= @product.place %><h2>
       <p><%= @product.capacity %> rooms<p>
       <p><%= @product.description %></p>
     </div>
 
-    <div class="tabs-reservation">
+    <div id="reservation">
       <p><strong><%= @product.price %><strong> &#128125;/night<p>
 
-      <div class="tab-reservation-detail>
+      <div id="reservation-detail">
         <%= simple_form_for [@product, @rental] do |f| %>
-          <%= f.input :arrival_date, id:"arrival" %>
-          <%= f.input :departure_date id:"departure"%>
-          <%= f.submit %>
+          <div class="d-flex">
+            <div id="arrival">
+              <span>Arrival</span>
+              <p><%= f.input :arrival_date, label: false %></p>
+            </div>
+           <div id="departure">
+              <span>Departure</span>
+              <p><%= f.input :departure_date, label: false %></p>
+            </div>
+          </div>
+          <%= f.submit "Reservation", id:"button-orange"%>
       <% end %>
       </div>
 
@@ -50,22 +58,10 @@
     </div>
   </div>
 
-<<<<<<< HEAD
   <% if policy(@product).edit? %>
     <%= link_to "Edit", edit_product_path(@product.id), class:"button" %>
   <% end %>
   <%= link_to "Back", products_path, class:"button" %>
-=======
-  <%= link_to "Edit", edit_product_path(@product.id) %>
-  <%= link_to "Delete your #{@product.genre.name}", product_path(@product), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  <%= link_to "Back to all the products", products_path %>
-
-  <%= simple_form_for [@product, @rental] do |f| %>
-  <%= f.input :arrival_date %>
-  <%= f.input :departure_date %>
-  <%= f.submit %>
-  <% end %>
->>>>>>> master
 </div>
 
 

@@ -83,7 +83,7 @@ $apothem: 482.842712474619px;
 
       &:hover {
         background-color: none;
-        color : #88bfa4;
+        color : white;
       }
 		}
 	}
@@ -109,19 +109,75 @@ $apothem: 482.842712474619px;
   }
 }
 
-.tabs-description {
+.tabs-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start
+}
+
+#description {
   p {
     font-family: "Electrolize", "sans-serif";
     font-size: 16px;
   }
 }
 
-.tabs-reservation {
+#reservation {
   p {
     font-family: "Orbitron", "sans-serif";
     font-weight: bold;
     font-size: 20px;
   }
+}
+
+.date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+
+  p {
+    font-size: 12px;
+  }
+}
+
+#arrival {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10% 30% 50% 70%;
+  border: solid #88bfa4;
+  box-shadow: 2px 2px 2px #88bfa464 ;
+}
+
+#departure {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius : 70% 50% 30% 10%;
+  border: solid #88bfa4;
+  box-shadow: 2px 2px 2px #88bfa464 ;
+}
+
+#button-orange {
+  text-decoration: none;
+  flex: 0 0 auto;
+  margin: 0 5px;
+
+  cursor: pointer;
+
+  color: #351C31;
+  background: #f99d5b;
+  border: solid #d96410;
+  box-shadow: 2px 2px 2px #f99d5b71 ;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+
+  &:hover {
+    background-color: white;
+    color: #f99d5b;
+  }
+
 }
 
 .button {
