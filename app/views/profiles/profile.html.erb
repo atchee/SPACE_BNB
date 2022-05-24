@@ -1,0 +1,33 @@
+<div class= "container">
+  <div>
+    <h1>My profile</h1>
+    <h2>Personnal information</h2>
+    <h4><%= current_user.email%></h4>
+    <h4><%= current_user.first_name%></h4>
+    <h4><%= current_user.last_name%></h4>
+    <h4><%= current_user.date_of_birth%></h4>
+  </div>
+
+  <div>
+    <h2>My places</h2>
+    <% current_user.products.each do |product| %>
+    <h4>Product : <%= product.name %></h4>
+    <h5>Place : <%= product.place %></h5>
+    <h5>Description : <%= product.description %></h5>
+    <h5>Capacity : <%= product.capacity %></h5>
+    <h5>Price : <%= product.price %>$</h5>
+    <% end %>
+  </div>
+
+  <div>
+    <h2>My rentals</h2>
+    <% current_user.rentals.each do |rental| %>
+    <h4>Renteur : <%= rental.user_id | rental.user_id %></h4>
+    <h5>Arrival date : <%= rental.arrival_date %></h5>
+    <h5>Departure date : <%= rental.departure_date %></h5>
+    <h5>Product_id : <%= rental.product_id %></h5>
+    <% end %>
+  </div>
+
+  </div>
+</div>
