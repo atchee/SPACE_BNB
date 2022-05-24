@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.3"
 
+#Mise en place de Pundit / Authorization
+gem "pundit"
+
 # Mise en place sign-in / sign-up user
 gem "devise"
 
