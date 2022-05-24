@@ -1,7 +1,22 @@
+<body>
 <h1>SpaceBnB</h1>
 
-<ul>
-  <% @products.each do |product| %>
-  <li><%= link_to product.name, product_path(product) %></li>
-  <% end %>
-</ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images2.alphacoders.com/542/thumb-1920-542730.png);">
+  <div class="container">
+    <h1><strong>SpaceBnB </strong></h1>
+    <p>For you next holiday destination, aim for the stars!</p>
+  </div>
+</div>
+
+  <div >
+    <ul div class="cards">
+      <% @products.each do |product| %>
+        <%= link_to product_path(product) do %>
+          <li class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.cdnparenting.com/articles/2019/03/30155124/666692980-H.webp)">
+          <%= product.name %></li>
+        <% end %>
+      <% end %>
+    </ul>
+
+  </div>
+</body>
