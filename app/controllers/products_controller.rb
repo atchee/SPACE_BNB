@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :destroy]
+  before_action :set_product, only: [:show, :edit, :destroy, :update]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
 
@@ -9,25 +9,29 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    # authorize @product
+    authorize @product
   end
 
   def create
     @product = Product.new(product_params)
     @product.user = current_user
+    authorize @product
 
     if @product.save
-      redirect_to product_path(@product)
+      redirect_to products_path(@product)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
+    authorize @product
   end
 
   def update
-    @product = @product.save
+    authorize @product
+    @product.update(product_params)
+    redirect_to product_path(@product)
   end
 
   def show
@@ -35,8 +39,9 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = @product.destroy
-    redirect_to products_path
+    authorize @product
+    @product.destroy
+    redirect_to products_path, status: :see_other
   end
 
   private
@@ -46,6 +51,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :capacity, :description, :price, :place)
+    params.require(:product).permit(:name, :capacity, :description, :price, :place, :genre_id)
   end
 end
