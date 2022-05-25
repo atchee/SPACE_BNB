@@ -1,15 +1,17 @@
 class RentalsController < ApplicationController
 
   def create
+    @product = Product.find(params[:product_id])
     @rental = Rental.new(rental_params)
     @rental.user = current_user
-    @rental.product = Product.find(params[:product_id])
+    @rental.product = @product
     authorize @rental
 
     if @rental.save
-      redirect_to products_path(@product)
+      redirect_to profile_path
+      flash.alert = "Booking OK"
     else
-      render :new, status: :unprocessable_entity
+      render template: "products/show", status: :unprocessable_entity
     end
   end
 
