@@ -16,6 +16,10 @@
 @import "components/button_orange";
 @import "components/carousel";
 
+// Flatpickr
+@import "flatpickr/dist/flatpickr";
+@import "flatpickr/dist/themes/airbnb";
+
 a {
   text-decoration-style: none;
   text-decoration: none;
