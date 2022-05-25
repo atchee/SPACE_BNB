@@ -1,11 +1,19 @@
+
 <div class= "main-container">
   <div id="profile">
+
     <h1>My profile</h1>
+    <div class="user_picture">
+      <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
     <h2>Personnal information</h2>
     <h4><%= current_user.email%></h4>
     <h4><%= current_user.first_name%></h4>
     <h4><%= current_user.last_name%></h4>
     <h4><%= current_user.date_of_birth%></h4>
+
+    <h3 class="btn button-orange><%= link_to "Update your information", edit_user_registration_path(@current_user) %></h3>
+
   </div>
   <div class="products_wrapper">
     <h2>My places</h2>
@@ -20,7 +28,6 @@
         </div>
       <% end %>
     </div>
-
 
     <div>
       <h2>My rentals</h2>
