@@ -1,9 +1,6 @@
-
 <%= render "shared/navbar" %>
-
-<div class= "container">
-
-  <div>
+<div class= "main-container">
+  <div id="profile">
     <h1>My profile</h1>
     <div class="user_picture">
       <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
@@ -17,28 +14,35 @@
     <h3 class="btn button-orange><%= link_to "Update your information", edit_user_registration_path(@current_user) %></h3>
 
   </div>
-
-  <div>
+  <div class="products_wrapper">
     <h2>My places</h2>
-    <% current_user.products.each do |product| %>
-    <h4>Product : <%= product.name %></h4>
-    <h5>Place : <%= product.place %></h5>
-    <h5>Description : <%= product.description %></h5>
-    <h5>Capacity : <%= product.capacity %></h5>
-    <h5>Price : <%= product.price %>$</h5>
-    <% end %>
-  </div>
+    <div class="products">
+      <% current_user.products.each do |product| %>
+        <div class="product_card">
+          <h4>Product : <%= product.name %></h4>
+          <h5>Place : <%= product.place %></h5>
+          <h5>Description : <%= product.description %></h5>
+          <h5>Capacity : <%= product.capacity %></h5>
+          <h5>Price : <%= product.price %>$</h5>
+        </div>
+      <% end %>
+    </div>
 
-  <div>
-    <h2>My rentals</h2>
-    <% current_user.rentals.each do |rental| %>
-    <h4>Renteur : <%= rental.user_id | rental.user_id %></h4>
-    <h5>Arrival date : <%= rental.arrival_date %></h5>
-    <h5>Departure date : <%= rental.departure_date %></h5>
-    <h5>Product_id : <%= rental.product_id %></h5>
-     <div class= "btn btn-danger">
-      <%= link_to "Delete your booking", rental_path(rental), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-     </div>
-    <% end %>
+    <div>
+      <h2>My rentals</h2>
+      <div class="products">
+        <% current_user.rentals.each do |rental| %>
+          <div class="product_card">
+            <h4>Renteur : <%= rental.user_id | rental.user_id %></h4>
+            <h5>Arrival date : <%= rental.arrival_date %></h5>
+            <h5>Departure date : <%= rental.departure_date %></h5>
+            <h5>Product_id : <%= rental.product_id %></h5>
+            <div class= "btn btn-danger">
+              <%= link_to "Delete your booking", rental_path(rental), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
