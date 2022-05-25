@@ -1,5 +1,11 @@
 <body>
 <h1>SpaceBnB</h1>
+  <% if user_signed_in? %>
+  <%= link_to "logout", destroy_user_session_path, class:"button-white", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  <%= link_to "profile", profile_path(@user), class:"button-white"  %>
+  <%else  %>
+    <%= link_to "Sign_in", new_user_session_path, class:"button-white"  %>
+  <% end %>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images2.alphacoders.com/542/thumb-1920-542730.png);">
   <div class="container">
