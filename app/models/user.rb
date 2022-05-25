@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :rentals, dependent: :destroy
 
   validates :first_name, :last_name, :date_of_birth, presence: true
+  has_one_attached :photo
 end
