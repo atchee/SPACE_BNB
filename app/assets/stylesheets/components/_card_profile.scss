@@ -1,4 +1,4 @@
-.products_wrapper {
+.products-wrapper {
   top: 16px;
   right: 0;
   width: 70vw;
@@ -14,7 +14,7 @@
   margin: 30px;
 }
 
-.product_card {
+.product-card {
   background-size: cover;
   background-position: center;
   border-radius: 2px;
@@ -32,9 +32,9 @@
   padding: 20px;
 }
 
+
 .main-container {
   display: flex;
-
 }
 
 @media(max-width: 992px) {
