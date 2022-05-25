@@ -1,5 +1,3 @@
-<%= render "shared/navbar" %>
-
 <% if policy(@product).edit? %>
   <h1>Edit your place </h1>
   <%= simple_form_for(@product) do |f| %>
