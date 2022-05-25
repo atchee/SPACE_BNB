@@ -17,7 +17,7 @@ body {
   padding: 5px;
   position: relative;
 
-  a {
+  #delete {
     position: absolute;
     right: 5px;
     top: 5px;
@@ -42,11 +42,15 @@ body {
 }
 
 #reservation {
-  width: fit-content;
+  width: 40%;
+  border: solid lightgrey;
+  box-shadow: 2px 2px 2px rgba(211, 211, 211, 0.394);
+  border-radius: 5px;
+  padding: 20px;
 
   p {
     font-family: "Orbitron", "sans-serif";
-    font-weight: bold;
+    font-weight: lighter;
     font-size: 20px;
   }
 }
@@ -62,20 +66,25 @@ body {
   }
 }
 
+
+
 #arrival {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 5% 0% 0% 5%;
+  border-radius: 5px 0px 0px 5px;
   border: solid #88bfa4;
+  border-right: none;
   box-shadow: 2px 2px 2px #88bfa464 ;
+  width: 50%;
 }
 
 #departure {
   display:flex;
   flex-direction: column;
   align-items: center;
-  border-radius : 0% 5% 5% 0%;
+  border-radius : 0px 5px 5px 0px;
   border: solid #88bfa4;
   box-shadow: 2px 2px 2px #88bfa464 ;
+  width: 50%
 }

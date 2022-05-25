@@ -5,7 +5,7 @@
     <h2><%= @product.name %></h1>
     <p><%= @product.place %><p>
     <% if policy(@product).edit? %>
-    <%= link_to "+", product_path(@product), class:"button-white", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <%= link_to "+", product_path(@product), class:"button-white", id:"delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
   <% end %>
   </div>
 
@@ -35,14 +35,14 @@
     </div>
 
     <div id="reservation">
-      <p><strong><%= @product.price %><strong> &#128125;/night<p>
+      <p style="font-wize: light;"><%= @product.price %> €/night<p>
 
       <div id="reservation-detail">
         <%= simple_form_for [@product, @rental] do |f| %>
           <div class="d-flex">
             <div id="arrival">
               <span>Arrival</span>
-              <p><%= f.input :arrival_date, label: false %></p>
+              <p><%= f.input :arrival_date, label: false, as: :date%></p>
             </div>
            <div id="departure">
               <span>Departure</span>
@@ -61,7 +61,7 @@
   <% if policy(@product).edit? %>
     <%= link_to "Edit", edit_product_path(@product.id), class:"button-white" %>
   <% end %>
-  <%= link_to "Back", products_path, class:"button-white" %>
+  <%= link_to "<<", products_path, class:"button-white" %>
 </div>
 
 
