@@ -42,11 +42,11 @@
           <div class="d-flex">
             <div id="arrival">
               <span>Arrival</span>
-              <p><%= f.input :arrival_date, label: false, as: :date%></p>
+              <p><%= f.input :arrival_date, label: false, html5: true %></p>
             </div>
            <div id="departure">
               <span>Departure</span>
-              <p><%= f.input :departure_date, label: false %></p>
+              <p><%= f.input :departure_date, label: false, html5: true %></p>
             </div>
           </div>
           <%= f.submit "Reservation", class:"button-orange"%>

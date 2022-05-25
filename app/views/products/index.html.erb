@@ -1,22 +1,30 @@
-<body>
-<h1>SpaceBnB</h1>
+<div class="container">
+  <h1>SpaceBnB</h1>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images2.alphacoders.com/542/thumb-1920-542730.png);">
-  <div class="container">
-    <h1><strong>SpaceBnB </strong></h1>
-    <p>For you next holiday destination, aim for the stars!</p>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images2.alphacoders.com/542/thumb-1920-542730.png);">
+    <div>
+      <h1><strong>SpaceBnB </strong></h1>
+      <p>For you next holiday destination, aim for the stars!</p>
+    </div>
   </div>
+
+  <div class="cards">
+    <% @products.each do |product| %>
+    <div class="card card-index">
+      <% link_to product.name, product_path(product) %>
+      <i class="fa-solid fa-heart" stule="color: white"></i>
+      <div class="card-img">
+        <img src="https://source.unsplash.com/random/800x533/?space" alt="">
+      </div>
+      <div class="card-body">
+        <p class="card-title"><%= product.name %></p>
+        <p class="card-description"><%= product.description %></p>
+        <div class="card-price">
+          <p><%= product.price %>€/night</p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
 </div>
-
-  <div >
-    <ul div class="cards">
-      <% @products.each do |product| %>
-        <%= link_to product_path(product) do %>
-          <li class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.cdnparenting.com/articles/2019/03/30155124/666692980-H.webp)">
-          <%= product.name %></li>
-        <% end %>
-      <% end %>
-    </ul>
-
-  </div>
-</body>
