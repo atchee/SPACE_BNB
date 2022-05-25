@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :products do
     resources :rentals, only: [:create]
   end
+  resources :rentals, only: [:destroy]
 end
