@@ -1,17 +1,15 @@
 <%= render "shared/navbar" %>
 <div class= "main-container">
   <div id="profile">
-    <h1>My profile</h1>
-    <div class="avatar-large ps-5 pt-2 pb-2">
-      <%= cl_image_tag current_user.photo.key, :radius=>"max", :color=>"lightblue", :background=>"lightblue", :width=>300, :crop=>"fill"%>
+    <h2>My profile</h2>
+    <div class="avatar-large pt-2 pb-2">
+      <%= cl_image_tag current_user.photo.key, :radius=>"max", :color=>"lightgrey", :background=>"lightgrey", :width=>250, :crop=>"fill"%>
     </div>
-    <h2>Personnal information</h2>
-    <h4>Email : <%= current_user.email%></h4>
-    <h4>First name : <%= current_user.first_name%></h4>
-    <h4>Last name : <%= current_user.last_name%></h4>
-    <h4>Date of Birth : <%= current_user.date_of_birth%></h4>
+    <h4><%= current_user.first_name%> <%= current_user.last_name%></h4>
+    <h5><i class="fa-solid fa-envelope"></i> <%= current_user.email%></h5>
+    <h5><i class="fa-solid fa-cake-candles"></i> <%= current_user.date_of_birth%></h5>
 
-    <h3 class="btn button-orange"><%= link_to "Update your information", edit_user_registration_path(@current_user) %></h3>
+    <h4 class="btn button-white"><%= link_to "Update your information", edit_user_registration_path(@current_user) %></h3>
   </div>
   <div class="products_wrapper">
     <h2>My places</h2>
@@ -23,12 +21,12 @@
           <h5>Description : <%= product.description %></h5>
           <h5>Capacity : <%= product.capacity %></h5>
           <h5>Price : <%= product.price %>$</h5>
-          <div class= "btn-orange">
-           <%= link_to "Edit your place", edit_product_path(product) %>
-          </div>
-          <div class= "btn-white">
-            <%= link_to "Delete your place", product_path(product), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-          </div>
+           <%= link_to edit_product_path(product) do %>
+            <i class="fa-solid fa-pencil"></i>
+          <% end %>
+          <%= link_to product_path(product), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
         </div>
       <% end %>
       <div class= "btn-orange">
@@ -37,7 +35,7 @@
     </div>
 
     <div>
-      <h2>My rentals</h2>
+      <h2>My bookings</h2>
       <div class="products">
         <% current_user.rentals.each do |rental| %>
           <div class="product_card">
@@ -45,8 +43,8 @@
             <h5>Arrival date : <%= rental.arrival_date %></h5>
             <h5>Departure date : <%= rental.departure_date %></h5>
             <h5>Product_id : <%= rental.product_id %></h5>
-            <div class= "btn btn-danger">
-              <%= link_to "Delete your booking", rental_path(rental), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            <div class= "button-orange">
+              <%= link_to "Cancel my booking", rental_path(rental), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
             </div>
           </div>
         <% end %>
