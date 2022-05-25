@@ -1,6 +1,6 @@
 
 <%= render "shared/navbar" %>
-  
+
 
 
   <h1 id= "main-title">SpaceBnB</h1>
@@ -12,20 +12,21 @@
 
   <div class="cards">
     <% @products.each do |product| %>
-    <div class="card card-index">
-      <% link_to product.name, product_path(product) %>
-      <i class="fa-solid fa-heart" stule="color: white"></i>
-      <div class="card-img">
-        <img src="https://source.unsplash.com/random/800x533/?space" alt="">
+      <div class="card card-index">
+        <%= link_to product_path(product) do %>
+          <i class="fa-solid fa-heart" stule="color: white"></i>
+          <div class="card-img">
+            <img src="https://source.unsplash.com/random/800x533/?space" alt="">
+          </div>
+          <div class="card-body">
+            <p class="card-title"><%= product.name %></p>
+            <p class="card-description"><%= product.description %></p>
+            <div class="card-price">
+              <p><%= product.price %>€/night</p>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <div class="card-body">
-        <p class="card-title"><%= product.name %></p>
-        <p class="card-description"><%= product.description %></p>
-        <div class="card-price">
-          <p><%= product.price %>€/night</p>
-        </div>
-      </div>
-    </div>
     <% end %>
   </div>
 
