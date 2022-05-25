@@ -10,3 +10,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/show";
+@import "components/button-white";
+@import "components/button_orange";
+@import "components/carousel";
+
+a {
+  text-decoration-style: none;
+  text-decoration: none;
+  &:hover {
+    color: #ffffff;
+  }
+}
