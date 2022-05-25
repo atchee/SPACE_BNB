@@ -4,8 +4,12 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
+import NavbarController from "./navbar_controller.js"
+application.register("navbar", NavbarController)
+
+import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
+
 
 const slider = document.querySelector('.gallery');
 let isDown = false;
@@ -34,3 +38,4 @@ slider.addEventListener('mousemove', e => {
   const walk = (x - startX) * SCROLL_SPEED;
   slider.scrollLeft = scrollLeft - walk;
 });
+
