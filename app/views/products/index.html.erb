@@ -1,5 +1,6 @@
+<%= render "shared/navbar" %>
 <body>
-<h1>SpaceBnB</h1>
+  <h1>SpaceBnB</h1>
   <% if user_signed_in? %>
   <%= link_to "logout", destroy_user_session_path, class:"button-white", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
   <%= link_to "profile", profile_path(@user), class:"button-white"  %>
@@ -7,22 +8,24 @@
     <%= link_to "Sign_in", new_user_session_path, class:"button-white"  %>
   <% end %>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images2.alphacoders.com/542/thumb-1920-542730.png);">
-  <div class="container">
-    <h1><strong>SpaceBnB </strong></h1>
-    <p>For you next holiday destination, aim for the stars!</p>
-  </div>
-</div>
 
-  <div >
-    <ul div class="cards">
-      <% @products.each do |product| %>
-        <%= link_to product_path(product) do %>
-          <li class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.cdnparenting.com/articles/2019/03/30155124/666692980-H.webp)">
-          <%= product.name %></li>
+  <h1 id= "main-title">SpaceBnB</h1>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images2.alphacoders.com/542/thumb-1920-542730.png);">
+    <div class="container">
+      <h1><strong>SpaceBnB </strong></h1>
+      <p>For you next holiday destination, aim for the stars!</p>
+    </div>
+  </div>
+
+    <div >
+      <ul div class="cards">
+        <% @products.each do |product| %>
+          <%= link_to product_path(product) do %>
+            <li class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.cdnparenting.com/articles/2019/03/30155124/666692980-H.webp)">
+            <%= product.name %></li>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
 
-  </div>
+    </div>
 </body>
