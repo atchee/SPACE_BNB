@@ -10,87 +10,6 @@ body {
 }
 
 
-// Carousel configuration parameters
-$n: 8;
-$item-width: 800px;
-$item-separation: 450px;
-$viewer-distance: 800px;
-
-// Derived variables
-$theta: 2 * 3.141592653589793 / $n;
-$apothem: 482.842712474619px;
-
-.carousel {
-	padding: 20px;
-
-	perspective: $viewer-distance;
-	overflow: hidden;
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	> * {
-		flex: 0 0 auto;
-	}
-
-	figure {
-		margin: 0;
-
-		width: $item-width;
-		transform-style: preserve-3d;
-		transition: transform 0.5s;
-		transform-origin: 50% 50% (-$apothem);
-
-		img {
-			width: 100%;
-			box-sizing: border-box;
-			padding: 0 $item-separation / 2;
-
-			opacity: 0.9;
-
-			&:not(:first-of-type) {
-				position: absolute;
-				left: 0;
-				top: 0;
-				transform-origin: 50% 50% (-$apothem);
-			}
-
-			@for $i from 2 through $n {
-				&:nth-child(#{$i}) {
-					transform: rotateY(#{($i - 1) * $theta}rad);
-				}
-			}
-		}
-	}
-
-	nav {
-		display: flex;
-		justify-content: center;
-		margin: 20px 0 0;
-
-		button {
-			flex: 0 0 auto;
-			margin: 0 5px;
-
-			cursor: pointer;
-
-			color: #351C31;
-			background: none;
-			border: solid #88bfa4;
-      box-shadow: 2px 2px 2px #88bfa464 ;
-			letter-spacing: 1px;
-			padding: 5px 10px;
-
-      &:hover {
-        background-color: none;
-        color : white;
-      }
-		}
-	}
-
-}
-
-
 
 .tabs {
   border-bottom: solid #88bfa4;
@@ -123,6 +42,8 @@ $apothem: 482.842712474619px;
 }
 
 #reservation {
+  width: fit-content;
+
   p {
     font-family: "Orbitron", "sans-serif";
     font-weight: bold;
@@ -145,7 +66,7 @@ $apothem: 482.842712474619px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 10% 30% 50% 70%;
+  border-radius: 5% 0% 0% 5%;
   border: solid #88bfa4;
   box-shadow: 2px 2px 2px #88bfa464 ;
 }
@@ -154,51 +75,7 @@ $apothem: 482.842712474619px;
   display:flex;
   flex-direction: column;
   align-items: center;
-  border-radius : 70% 50% 30% 10%;
+  border-radius : 0% 5% 5% 0%;
   border: solid #88bfa4;
   box-shadow: 2px 2px 2px #88bfa464 ;
-}
-
-#button-orange {
-  text-decoration: none;
-  flex: 0 0 auto;
-  margin: 0 5px;
-
-  cursor: pointer;
-
-  color: #351C31;
-  background: #f99d5b;
-  border: solid #d96410;
-  box-shadow: 2px 2px 2px #f99d5b71 ;
-  letter-spacing: 1px;
-  padding: 5px 10px;
-
-  &:hover {
-    background-color: white;
-    color: #f99d5b;
-  }
-
-}
-
-.button {
-  text-decoration: none;
-  flex: 0 0 auto;
-  margin: 0 5px;
-
-  cursor: pointer;
-
-  color: #351C31;
-  background: none;
-  border: solid #88bfa4;
-  box-shadow: 2px 2px 2px #88bfa464 ;
-  letter-spacing: 1px;
-  padding: 5px 10px;
-
-  &:hover {
-    background-color: #88bfa4;
-  }
-}
-
-a {
-  text-decoration-style: none;
 }

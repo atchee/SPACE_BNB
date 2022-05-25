@@ -5,7 +5,7 @@
     <h2><%= @product.name %></h1>
     <p><%= @product.place %><p>
     <% if policy(@product).edit? %>
-    <%= link_to "+", product_path(@product), class:"button", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <%= link_to "+", product_path(@product), class:"button-white", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
   <% end %>
   </div>
 
@@ -22,8 +22,8 @@
     </figure>
 
     <nav>
-      <button class="button"><<</button>
-      <button class="button">>></button>
+      <button class="button-white"><<</button>
+      <button class="button-white">>></button>
     </nav>
   </div>
 
@@ -49,7 +49,7 @@
               <p><%= f.input :departure_date, label: false %></p>
             </div>
           </div>
-          <%= f.submit "Reservation", id:"button-orange"%>
+          <%= f.submit "Reservation", class:"button-orange"%>
       <% end %>
       </div>
 
@@ -59,9 +59,9 @@
   </div>
 
   <% if policy(@product).edit? %>
-    <%= link_to "Edit", edit_product_path(@product.id), class:"button" %>
+    <%= link_to "Edit", edit_product_path(@product.id), class:"button-white" %>
   <% end %>
-  <%= link_to "Back", products_path, class:"button" %>
+  <%= link_to "Back", products_path, class:"button-white" %>
 </div>
 
 
