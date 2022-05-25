@@ -82,3 +82,9 @@ body {
   box-shadow: 2px 2px 2px #88bfa464 ;
   width: 50%
 }
+
+a {
+  &:hover {
+    color: #ffffff;
+  }
+}

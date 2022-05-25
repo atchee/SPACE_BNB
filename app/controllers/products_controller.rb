@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     authorize @product
 
     if @product.save
-      redirect_to products_path(@product)
+      redirect_to product_path(@product)
     else
       render :new, status: :unprocessable_entity
     end
