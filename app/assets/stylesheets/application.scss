@@ -18,10 +18,11 @@
 @import "components/carousel_minimal";
 @import "components/card";
 
+body {
+  background-color: white;
+}
+
 a {
   text-decoration-style: none;
   text-decoration: none;
-  &:hover {
-    color: #ffffff;
-  }
 }
