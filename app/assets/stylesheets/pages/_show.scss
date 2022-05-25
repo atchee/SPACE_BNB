@@ -1,0 +1,81 @@
+body {
+	margin: 0;
+
+	display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+
+  background-color: white;
+}
+
+
+
+.tabs {
+  border-bottom: solid #88bfa4;
+  box-shadow: 0px 2px #88bfa464 ;
+  padding: 5px;
+  position: relative;
+
+  a {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 24px;
+    padding: 10px 0px;
+    margin: 0px;
+    writing-mode: vertical-rl;
+  }
+}
+
+.tabs-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start
+}
+
+#description {
+  p {
+    font-family: "Electrolize", "sans-serif";
+    font-size: 16px;
+  }
+}
+
+#reservation {
+  width: fit-content;
+
+  p {
+    font-family: "Orbitron", "sans-serif";
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+.date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+
+  p {
+    font-size: 12px;
+  }
+}
+
+#arrival {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5% 0% 0% 5%;
+  border: solid #88bfa4;
+  box-shadow: 2px 2px 2px #88bfa464 ;
+}
+
+#departure {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius : 0% 5% 5% 0%;
+  border: solid #88bfa4;
+  box-shadow: 2px 2px 2px #88bfa464 ;
+}
