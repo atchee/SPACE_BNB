@@ -1,7 +1,6 @@
-
+<%= render "shared/navbar" %>
 <div class= "main-container">
   <div id="profile">
-
     <h1>My profile</h1>
     <div class="user_picture">
       <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
