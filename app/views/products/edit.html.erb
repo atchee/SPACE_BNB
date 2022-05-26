@@ -3,12 +3,13 @@
 <% if policy(@product).edit? %>
   <h1>Edit your place </h1>
   <%= simple_form_for(@product) do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name, label: 'The name of your place' %>
   <%= f.input :description %>
   <%= f.input :capacity %>
   <%= f.input :price %>
   <%= f.input :place %>
   <%= f.association :genre, collection: Genre.all.order(:name), prompt: "Choose a genre" %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Add all the picture of your place' %>
   <%= f.submit %>
   <% end %>
 <% end %>
