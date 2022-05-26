@@ -1,6 +1,5 @@
-<%= render "shared/navbar" %>
-
-<%= simple_form_for @product do |f| %>
+<div class="container">
+  <%= simple_form_for @product do |f| %>
   <%= f.input :name %>
   <%= f.input :capacity %>
   <%= f.input :description %>
@@ -8,4 +7,6 @@
   <%= f.input :place %>
   <%= f.association :genre, collection: Genre.all.order(:name), prompt: "Choose a genre" %>
   <%= f.submit %>
-<% end %>
+  <% end %>
+
+</div>
