@@ -4,14 +4,6 @@
 
 import { application } from "./application"
 
-import NavbarController from "./navbar_controller.js"
-application.register("navbar", NavbarController)
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
 
-import HelloController from "./hello_controller.js"
-application.register("hello", HelloController)
-
-
-const slider = document.querySelector('.gallery');
-let isDown = false;
-let startX;
-let scrollLeft;
