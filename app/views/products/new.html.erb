@@ -1,13 +1,16 @@
-<div class="container">
-  <%= simple_form_for @product do |f| %>
-  <%= f.input :name %>
-  <%= f.input :capacity %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :place %>
-  <%= f.association :genre, collection: Genre.all.order(:name), prompt: "Choose a genre" %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
-  <% end %>
-
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <%= simple_form_for @product do |f| %>
+      <%= f.input :name %>
+      <%= f.input :capacity %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :place %>
+      <%= f.association :genre, collection: Genre.all.order(:name), prompt: "Choose a genre" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.submit class:"button-orange" %>
+      <% end %>
+    </div>
+  </div>
 </div>
