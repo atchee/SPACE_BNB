@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :products, dependent: :destroy
   has_many :rentals, dependent: :destroy
 
+  has_many :demands, through: :products, source: :rentals
+
   validates :first_name, :last_name, :date_of_birth, presence: true
   has_one_attached :photo
 end
