@@ -3,12 +3,19 @@
   background-color: transparent;
   transition: 0.5s background-color ease;
 }
+
 .navbar-lewagon-white {
   background-color: white ;
+  border-bottom: solid #88bfa4;
+  box-shadow: 2px 2px 2px #88bfa464
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+}
+
+.navbar-brand{
+  max-width: 80px;
 }
 
 .navbar-lewagon .navbar-brand img {
