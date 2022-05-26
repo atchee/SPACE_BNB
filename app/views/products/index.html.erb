@@ -8,6 +8,8 @@
       <p>For you next holiday destination, aim for the stars!</p>
   </div>
 
+  <%= render "searchbar", product: @product %>
+
   <div class="cards">
     <% @products.each do |product| %>
       <div class="card card-index">
@@ -27,5 +29,4 @@
       </div>
     <% end %>
   </div>
-
 </div>
