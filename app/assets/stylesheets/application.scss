@@ -10,17 +10,22 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
 @import "pages/show";
+
 @import "components/button-white";
 @import "components/button_orange";
 @import "components/carousel";
 @import "components/carousel_minimal";
 @import "components/card";
+@import "components/footer";
 
 body {
   background-color: white;
 }
+
+// Flatpickr
+@import "flatpickr/dist/flatpickr";
+@import "flatpickr/dist/themes/airbnb";
 
 a {
   text-decoration-style: none;

@@ -6,4 +6,11 @@ class Product < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :capacity, :price, :place, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_product,
+    against: [ :name, :description, :place, :price ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

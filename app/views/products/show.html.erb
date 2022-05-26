@@ -38,16 +38,18 @@
     <div id="reservation">
       <p style="font-wize: light;"><%= @product.price %> €/night<p>
 
-      <div id="reservation-detail">
+      <div id="reservation-detail" data-controller="flatpickr">
         <%= simple_form_for [@product, @rental] do |f| %>
-          <div class="d-flex">
+          <div class="d-flex" style="width: 400px; margin: 0 auto;">
             <div id="arrival">
               <span>Arrival</span>
-              <p><%= f.input :arrival_date, label: false, html5: true %></p>
+
+              <p><%= f.input :arrival_date, label: false, as: :string, required: false, input_html: { class: "datepicker", data: { flatpickr_target: "input" } }%></p>
             </div>
            <div id="departure">
               <span>Departure</span>
-              <p><%= f.input :departure_date, label: false, html5: true %></p>
+              <p><%= f.input :departure_date, label: false, as: :string, required: false, input_html: { class: "datepicker", data: { flatpickr_target: "input" } } %></p>
+
             </div>
           </div>
           <% if user_signed_in? %>
@@ -99,6 +101,4 @@
 
     figure.style.transform = `rotateY(${currImage * -theta}rad)`;
   }
-
-
 </script>
