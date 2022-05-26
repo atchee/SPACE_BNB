@@ -96,4 +96,10 @@
     figure.style.transform = `rotateY(${currImage * -theta}rad)`;
   }
 
+  const button = document.querySelector("button-orange");
+  button.addEventListener("click", function() {
+    if (user_signed_in?) {
+      alert("Please login order to book this place");
+    }
+  });
 </script>
