@@ -1,7 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between ;
-  background-color: transparent;
-  transition: 0.5s background-color ease;
+  // background-color: transparent;
+  // transition: 0.5s background-color ease;
+  background-color: white ;
+  border-bottom: solid #88bfa4;
+  box-shadow: 2px 2px 2px #88bfa464
 }
 
 .navbar-lewagon-white {

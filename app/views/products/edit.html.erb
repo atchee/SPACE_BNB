@@ -1,14 +1,18 @@
-<div class="container">
-  <% if policy(@product).edit? %>
-    <h1>Edit your place </h1>
-    <%= simple_form_for(@product) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :capacity %>
-    <%= f.input :price %>
-    <%= f.input :place %>
-    <%= f.association :genre, collection: Genre.all.order(:name), prompt: "Choose a genre" %>
-    <%= f.submit %>
-    <% end %>
-  <% end %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <% if policy(@product).edit? %>
+        <h3>Edit your place </h3>
+        <%= simple_form_for(@product) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :capacity %>
+        <%= f.input :price %>
+        <%= f.input :place %>
+        <%= f.association :genre, collection: Genre.all.order(:name), prompt: "Choose a genre" %>
+        <%= f.submit class:"button-orange" %>
+        <% end %>
+      <% end %>
+     </div>
+    </div>
 </div>
