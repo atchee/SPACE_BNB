@@ -52,7 +52,11 @@
 
             </div>
           </div>
-          <%= f.submit "Reservation", class:"button-orange"%>
+          <% if user_signed_in? %>
+            <%= f.submit "Reservation", class:"button-orange"%>
+          <% else %>
+            <%= f.submit "Reservation", class:"button-orange", data: {controller: 'alert'} %>
+          <% end %>
       <% end %>
       </div>
 
