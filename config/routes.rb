@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
   root to: 'products#index'
+
+  namespace :users do
+    root to: "products#index"
+  end
 
   get '/profile', to: 'profiles#profile'
 
