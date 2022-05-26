@@ -1,8 +1,30 @@
-#profile {
+.profile {
   height: 100vh;
-  width: 30vw;
+  width: 25vw;
   position: sticky;
-  background-color: rgb(250,250,250);
+  background-color: rgb(255, 255, 255);
   top: 0;
   padding: 20px;
+
+  p {
+    text-align: center;
+  }
+}
+
+.profile-text {
+  margin : 20px 0px 20px 0px;
+  border-left: solid #88bfa4;
+  padding-left: 10px;
+}
+
+#profile-img  {
+
+  img {
+    color: white;
+    background-color: white;
+    object-fit: cover;
+    width: 100%;
+    padding: 20px;
+    border-radius: 25px;
+  }
 }
