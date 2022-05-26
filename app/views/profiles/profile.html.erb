@@ -16,12 +16,13 @@
     <div class="products">
       <% current_user.products.each do |product| %>
         <div class="product-card">
-          <h4>Product : <%= product.name %></h4>
+          <h4><%= product.name %></h4>
+          <%= cl_image_tag product.photos.first.key, height: 253, width: 350, crop: :fill %>
           <div class="product-card-infos">
             <div>
-              <h5>Place : <%= product.place %></h5>
+              <h5>Located in: <%= product.place %></h5>
               <h5>Capacity : <%= product.capacity %></h5>
-              <h5>Price : <%= product.price %>$</h5>
+              <h5><%= product.price %>$</h5>
             </div>
             <%= link_to edit_product_path(product) do %>
               <i class="fa-solid fa-pencil"></i>
@@ -42,7 +43,7 @@
       <div class="products">
         <% current_user.rentals.each do |rental| %>
           <div class="product-card">
-            <h5>Product_id : <%= rental.product.name %></h5>
+            <h5><%= rental.product.name %></h5>
             <h5>From : <%= rental.arrival_date %></h5>
             <h5>Until : <%= rental.departure_date %></h5>
             <div class= "button-orange">
