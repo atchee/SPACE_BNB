@@ -6,6 +6,7 @@
   <%= f.input :price %>
   <%= f.input :place %>
   <%= f.association :genre, collection: Genre.all.order(:name), prompt: "Choose a genre" %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
   <% end %>
 

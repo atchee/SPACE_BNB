@@ -9,6 +9,8 @@ gem "pundit"
 # Mise en place sign-in / sign-up user
 gem "devise"
 
+# Seach Bar
+gem "pg_search"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"

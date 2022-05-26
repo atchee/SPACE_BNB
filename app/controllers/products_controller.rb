@@ -4,6 +4,11 @@ class ProductsController < ApplicationController
 
   def index
     @products = policy_scope(Product)
+
+    if params[:query].present?
+      # raise
+      @products = @products.search_product(params[:query])
+    end
   end
 
   def new
@@ -51,6 +56,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :capacity, :description, :price, :place, :genre_id)
+    params.require(:product).permit(:name, :capacity, :description, :price, :place, :genre_id, photos: [])
   end
 end
