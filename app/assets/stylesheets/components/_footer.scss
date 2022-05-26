@@ -1,0 +1,34 @@
+.footer {
+  border-top: solid #88bfa4;
+  box-shadow: 2px 2px 2px #88bfa464;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.footer-logo {
+  margin-left: 30px;
+  img {
+    height: 90px;
+  }
+
+}
+
+.footer-slogan {
+  color: white;
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 30px;
+  img {
+    height: 50px;
+    padding: 10px;
+  }
+}
