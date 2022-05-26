@@ -4,12 +4,12 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
   }
-  updateNavbar() {
-    if (window.scrollY >= 20) {
-      this.element.classList.remove("navbar-lewagon-white")
-    }
-    else {
-      this.element.classList.add("navbar-lewagon-white")
-    }
-  }
+  // updateNavbar() {
+  //   if (window.scrollY >= 20) {
+  //     this.element.classList.remove("navbar-lewagon-white")
+  //   }
+  //   else {
+  //     this.element.classList.add("navbar-lewagon-white")
+  //   }
+  // }
 }
