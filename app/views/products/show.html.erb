@@ -55,7 +55,8 @@
           <% if user_signed_in? %>
             <%= f.submit "Reservation", class:"button-orange"%>
           <% else %>
-            <%= f.submit "Reservation", class:"button-orange", data: {controller: 'alert'} %>
+            <%= f.submit "Reservation", class:"button-orange", data: { controller: 'alert' } %>
+            <span data-alert-target="notice"></span>
           <% end %>
       <% end %>
       </div>
