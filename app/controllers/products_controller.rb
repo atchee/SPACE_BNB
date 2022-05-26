@@ -4,6 +4,11 @@ class ProductsController < ApplicationController
 
   def index
     @products = policy_scope(Product)
+
+    if params[:query].present?
+      # raise
+      @products = @products.search_product(params[:query])
+    end
   end
 
   def new
