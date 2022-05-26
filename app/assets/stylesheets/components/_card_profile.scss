@@ -1,7 +1,7 @@
 .products-wrapper {
   top: 16px;
   right: 0;
-  width: 70vw;
+  width: 85vw;
   padding: 20px;
 }
 
@@ -12,29 +12,70 @@
   flex-grow: 1;
   padding: 16px;
   margin: 30px;
+
+  a {
+    text-align: center;
+  }
 }
 
 .product-card {
   background-size: cover;
   background-position: center;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 5px;
   display: flex;
   align-items: stretch;
   justify-content: flex-end;
-  font-size: 22px;
   color: black;
   background-color: white;
   align-content: center;
   flex-wrap: wrap;
   flex-direction: row-reverse;
   height: auto;
-  padding: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 2px #88bfa464;
+  border: solid #88bfa4;
+  position: relative;
+
+  img {
+    border-radius: 5px;
+    height: 253px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.product-card-infos {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+#product-card-infos-link {
+  position: absolute;
+  margin: 5px;
+  bottom: 5px;
+  right: 5px;
+}
+
+.product-card-booking-name {
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+#product-card-booking-date {
+  font-size: smaller;
 }
 
 
 .main-container {
   display: flex;
+  margin-top: 100px;
+
+  h2 {
+    border-bottom: solid #88bfa4;
+    border-left: solid #88bfa4;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
 }
 
 @media(max-width: 992px) {

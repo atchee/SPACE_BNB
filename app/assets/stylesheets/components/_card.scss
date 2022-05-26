@@ -28,7 +28,8 @@
     right: 15px;
     top: 15px;
     z-index: 1;
-    color: white;
+    color: rgba(255, 255, 255, 0.414);
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
   }
 }
 
