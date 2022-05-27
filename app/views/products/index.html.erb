@@ -23,7 +23,12 @@
   </button>
 </div>
 
-<div class="container">
+<div class="container-home-page">
+  <div class="container-search-bar">
+    <div class="search-bar col-6">
+      <%= render "searchbar", product: @product %>
+    </div>
+  </div>
     <div class="cards">
     <% @products.each do |product| %>
       <div class="card card-index">
