@@ -4,14 +4,8 @@
 
 import { application } from "./application"
 
-import AlertController from "./alert_controller.js"
-application.register("alert", AlertController)
-
 import FlatpickrController from "./flatpickr_controller.js"
 application.register("flatpickr", FlatpickrController)
-
-import NavbarController from "./navbar_controller.js"
-application.register("navbar", NavbarController)
 
 import TotalsumController from "./totalsum_controller.js"
 application.register("totalsum", TotalsumController)
