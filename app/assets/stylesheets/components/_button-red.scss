@@ -1,20 +1,20 @@
-.button-white {
+.button-red {
   text-decoration: none;
   flex: 0 0 auto;
   margin: 0 auto;
 
   cursor: pointer;
 
-  color: #351C31;
-  background: none;
-  border: solid #88bfa4;
+  color: white;
+  background: #851212;
+  border: solid #851212;
   border-radius: 5px;
-  box-shadow: 2px 2px 2px #88bfa464 ;
+  box-shadow: 2px 2px 2px #8512123c ;
   letter-spacing: 1px;
   padding: 5px 10px;
 
   &:hover {
-    background-color: #88bfa4;
+    background-color: none;
     color: white;
   }
 }

@@ -1,8 +1,8 @@
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-8">
+<div class="container">
+  <div class="form">
+  <h2>Edit your place :</h2>
+    <div>
       <% if policy(@product).edit? %>
-        <h3>Edit your place </h3>
         <%= simple_form_for(@product) do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
@@ -14,5 +14,9 @@
         <% end %>
       <% end %>
    </div>
+
+    <div class="form-sup-link">
+      <%= link_to "<<", :back, class:"button-white" %>
+    </div>
   </div>
 </div>
