@@ -18,7 +18,7 @@ class RentalsController < ApplicationController
   def destroy
     @rental = Rental.find(params[:id])
     @rental.destroy
-    redirect_to products_path, status: :see_other
+    redirect_to profile_path
     authorize @rental
   end
 
