@@ -1,6 +1,7 @@
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-8">
+<div class="container">
+  <div class="form">
+    <h2>Add a new product :</h2>
+    <div>
       <%= simple_form_for @product do |f| %>
       <%= f.input :name %>
       <%= f.input :capacity %>
@@ -12,5 +13,10 @@
       <%= f.submit class:"button-orange" %>
       <% end %>
     </div>
+
+    <div class="form-sup-link">
+      <%= link_to "<<", :back, class:"button-white" %>
+    </div>
+
   </div>
 </div>
