@@ -66,6 +66,26 @@
   font-size: smaller;
 }
 
+#product-card-new {
+  display: flex;
+  flex-direction: column;
+  width: 201,16px;
+  height: 515px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 2px 2px 2px #88bfa464;
+  border: solid #88bfa4;
+  border-radius: 5px;
+  color: #88bfa4;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #88bfa4;
+    color: white;
+  }
+}
+
 
 .main-container {
   display: flex;
