@@ -21,4 +21,10 @@ class Rental < ApplicationRecord
       end
     end
   end
+
+  def total_price
+    total = departure_date - arrival_date
+    return total.to_i * self.product.price
+  end
+
 end
