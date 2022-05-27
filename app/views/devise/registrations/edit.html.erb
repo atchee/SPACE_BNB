@@ -1,10 +1,10 @@
+
 <div class= "container form">
 
   <h2>Edit your information <%= resource_name.to_s.humanize %></h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}, html: { method: :put }) do |f| %>
     <%= f.error_notification %>
-    <%= resource.errors.messages %>
     <div class="form-inputs">
       <%= f.input :email, required: true, autofocus: true %>
 
@@ -49,5 +49,4 @@
       <%= link_to "<<", :back, class:"button-white" %>
       <%= link_to "Cancel my account", registration_path(resource_name), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"button-red" %></p>
     </div>
-
 </div>
