@@ -51,6 +51,8 @@ file = URI.open("https://images.pexels.com/photos/2440079/pexels-photo-2440079.j
 p_1.photos.attach(io: file, filename: "mars7.png", content_type: "image/png")
 file = URI.open("https://images.omerlocdn.com/resize?url=https:%2F%2Fgcm-v2.omerlocdn.com%2Fproduction%2Fglobal%2Ffiles%2Fimage%2F7d1b876c-fa57-49c5-b98b-9e81b1f4ad21.jpg&stripmeta=true&width=1200&type=jpeg")
 p_1.photos.attach(io: file, filename: "mars8.png", content_type: "image/png")
+file = URI.open("https://www.alleedescuriosites.com/wp-content/uploads/2019/04/matt-damon-seul-sur-mars.jpg")
+p_1.photos.attach(io: file, filename: "mars9.png", content_type: "image/png")
 p_1.save!
 p 'created 1 product'
 
@@ -73,6 +75,8 @@ file = URI.open("https://bgr.com/wp-content/uploads/2019/06/capture-17.jpg")
 p_2.photos.attach(io: file, filename: "neptune7.png", content_type: "image/png")
 file = URI.open("http://www.planete-astronomie.com/tl_files/photos/Neptune/1-La-planete-Neptune/PIA00051.jpg")
 p_2.photos.attach(io: file, filename: "neptune8.png", content_type: "image/png")
+file = URI.open("https://i1.wp.com/dans-la-lune.fr/wp-content/uploads/2022/03/proble-me-a-trois-corps.jpeg?resize=365%2C330")
+p_2.photos.attach(io: file, filename: "neptune9.png", content_type: "image/png")
 p_2.save!
 p 'created 2 product'
 
@@ -93,26 +97,30 @@ file = URI.open("https://www.fubiz.net/wp-content/uploads/2016/09/housedesert0-9
 p_3.photos.attach(io: file, filename: "mercure7.png", content_type: "image/png")
 file = URI.open("https://i.pinimg.com/originals/81/71/78/817178c2f23dc0b0d0fcd66f63c59a5b.jpg")
 p_3.photos.attach(io: file, filename: "mercure8.png", content_type: "image/png")
+file = URI.open("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4bb40a07-38c2-4a27-93ca-fb295abc24ab/d173a38-c538603a-ceab-4285-9547-bb92ae903a1d.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRiYjQwYTA3LTM4YzItNGEyNy05M2NhLWZiMjk1YWJjMjRhYlwvZDE3M2EzOC1jNTM4NjAzYS1jZWFiLTQyODUtOTU0Ny1iYjkyYWU5MDNhMWQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.WF9wtI_5G9u_19Apj7umnAF5e1FltQulfBdjbgAST_M")
+p_3.photos.attach(io: file, filename: "mercure9.png", content_type: "image/png")
 p_3.save!
 p "created 3 product"
 
 p_4 = Product.new({ name: "Loop around your dreams, best spot on Saturn!", capacity: 19, description: "Best place to admire the most beautifull celestial rings of the galaxy!", price: 57, place: "solar system", user: User.all.sample, genre: Genre.all.sample })
 file = URI.open("https://starwalk.space/gallery/images/july-2020-saturn-at-opposition-seize-the-moment/1920x1080.jpg")
-p_4.photos.attach(io: file, filename: "mercure1.png", content_type: "image/png")
+p_4.photos.attach(io: file, filename: "saturn1.png", content_type: "image/png")
 file = URI.open("http://www.shinykittenstickers.com/wp-content/uploads/2015/03/by-everlite.jpg")
-p_4.photos.attach(io: file, filename: "mercure2.png", content_type: "image/png")
+p_4.photos.attach(io: file, filename: "saturn2.png", content_type: "image/png")
 file = URI.open("https://i.pinimg.com/originals/ff/02/42/ff0242dbc36bbfccf55f4922aebc8fcc.jpg")
-p_4.photos.attach(io: file, filename: "mercure3.png", content_type: "image/png")
+p_4.photos.attach(io: file, filename: "saturn3.png", content_type: "image/png")
 file = URI.open("https://griffithobservatory.org/wp-content/uploads/2021/03/saturn_LD.jpg")
-p_4.photos.attach(io: file, filename: "mercure4.png", content_type: "image/png")
+p_4.photos.attach(io: file, filename: "saturn4.png", content_type: "image/png")
 file = URI.open("https://w0.peakpx.com/wallpaper/317/1012/HD-wallpaper-saturn-planets-stars-cool-space-fun.jpg")
-p_4.photos.attach(io: file, filename: "mercure5.png", content_type: "image/png")
+p_4.photos.attach(io: file, filename: "saturn5.png", content_type: "image/png")
 file = URI.open("https://i.pinimg.com/originals/6c/36/04/6c3604135943115806d1b83627b70109.jpg")
-p_4.photos.attach(io: file, filename: "mercure6.png", content_type: "image/png")
+p_4.photos.attach(io: file, filename: "saturn6.png", content_type: "image/png")
 file = URI.open("https://cdna.artstation.com/p/assets/images/images/015/717/134/large/michael-pedro-michael-pedro-ringworld.jpg?1549376493")
-p_4.photos.attach(io: file, filename: "mercure7.png", content_type: "image/png")
+p_4.photos.attach(io: file, filename: "saturn7.png", content_type: "image/png")
 file = URI.open("https://www.yankodesign.com/images/design_news/2020/08/space-homes/08-Interstellar-Labs_EBIOS_Mars2.jpg")
-p_4.photos.attach(io: file, filename: "mercure8.png", content_type: "image/png")
+p_4.photos.attach(io: file, filename: "saturn8.png", content_type: "image/png")
+file = URI.open("https://qph.fs.quoracdn.net/main-qimg-79757e73d6292d41227a687a3324dfc3-lq")
+p_4.photos.attach(io: file, filename: "saturn9.png", content_type: "image/png")
 p_4.save!
 p "created 4 product"
   # {  },
