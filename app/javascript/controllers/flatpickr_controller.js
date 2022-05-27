@@ -26,7 +26,7 @@ export default class extends Controller {
     console.log(this.priceValue)
     const cost = duration * this.priceValue
     if (cost > 0) {
-      this.resultTarget.innerText = `The total cost will be ${cost} €`
+      this.resultTarget.innerText = `Total : ${cost} €`
     }
   }
 }

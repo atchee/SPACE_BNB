@@ -43,7 +43,13 @@
           </div>
         </div>
       <% end %>
-      <%= link_to "Add new place", new_product_path, class:"button-white"%>
+
+        <%= link_to new_product_path do %>
+          <div id="product-card-new">
+              <p>Add a new place</p>
+              <h3>+</h3>
+          </div>
+        <% end %>
     </div>
 
     <div>

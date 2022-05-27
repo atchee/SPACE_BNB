@@ -2,9 +2,6 @@ body {
 	margin: 0;
 }
 
-
-
-
 .tabs {
   border-bottom: solid #88bfa4;
   box-shadow: 0px 2px #88bfa464 ;
@@ -87,4 +84,13 @@ a {
   &:hover {
     color: #ffffff;
   }
+}
+
+#reservation-result {
+  border-top: solid #0E0A10;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: right;
+  font-size: 20px;
+  font-weight: bolder;
 }
