@@ -123,6 +123,30 @@ file = URI.open("https://qph.fs.quoracdn.net/main-qimg-79757e73d6292d41227a687a3
 p_4.photos.attach(io: file, filename: "saturn9.png", content_type: "image/png")
 p_4.save!
 p "created 4 product"
+
+p_4 = Product.new({ name: "Dominate the universe from the heights of Jupiter!", capacity: 19, description: "Perfect location for the sporty tourists, extra gravity will offer you challenges like you've never experienced before!", price: 57, place: "solar system", user: User.all.sample, genre: Genre.all.sample })
+file = URI.open("https://res.cloudinary.com/dryhvwfvf/image/upload/v1653659241/production/un-impressionnant-nuage-de-sable-survole-l-ouest-de-l-europe-1647321036844_1280_zmfkub.webp")
+p_4.photos.attach(io: file, filename: "jupiter1.png", content_type: "image/png")
+file = URI.open("https://res.cloudinary.com/dryhvwfvf/image/upload/v1653659240/production/fabuleux-coucher-de-soleil-splendide-paysage-sunset-plage-images-photos-gratuites-1560x1040_f1kogl.jpg")
+p_4.photos.attach(io: file, filename: "jupiter2.png", content_type: "image/png")
+file = URI.open("https://res.cloudinary.com/dryhvwfvf/image/upload/v1653659240/production/jupiter_1_h1gibp.jpg")
+p_4.photos.attach(io: file, filename: "jupiter3.png", content_type: "image/png")
+file = URI.open("https://res.cloudinary.com/dryhvwfvf/image/upload/v1653659240/production/f329f8fbf7_75071_etrangeexo_qblgmm.jpg")
+p_4.photos.attach(io: file, filename: "jupiter4.png", content_type: "image/png")
+file = URI.open("https://w0.peakpx.com/wallpaper/317/1012/HD-wallpaper-jupiter-planets-stars-cool-space-fun.jpg")
+p_4.photos.attach(io: file, filename: "jupiter5.png", content_type: "image/png")
+file = URI.open("https://res.cloudinary.com/dryhvwfvf/image/upload/v1653659225/development/b21ea19208ecb7b999ec1fc9064cb4e0_hjaes0.jpg")
+p_4.photos.attach(io: file, filename: "jupiter6.png", content_type: "image/png")
+file = URI.open("https://cdna.artstation.com/p/assets/images/images/015/717/134/large/michael-pedro-michael-pedro-ringworld.jpg?1549376493")
+p_4.photos.attach(io: file, filename: "jupiter7.png", content_type: "image/png")
+file = URI.open("https://res.cloudinary.com/dryhvwfvf/image/upload/v1653659387/development/b21ea19208ecb7b999ec1fc9064cb4e0_u5wvys.jpg")
+p_4.photos.attach(io: file, filename: "jupiter8.png", content_type: "image/png")
+file = URI.open("https://res.cloudinary.com/dryhvwfvf/image/upload/v1653659387/development/Astronaut-landing-on-jupiter_kyhqtt.webp")
+p_4.photos.attach(io: file, filename: "jupiter9.png", content_type: "image/png")
+p_4.save!
+p "created 5 product"
+
+
   # {  },
   # { name: "Dominate the universe from the heights of Jupiter!", capacity: 19, description: "Perfect location for the sporty tourists, extra gravity will offer you challenges like you've never experienced before!", price: 57, place: "solar system", user: User.all.sample, genre: Genre.all.sample },
   # { name: "Loop around your dreams, best spot on Saturn!", capacity: 19, description: "Best place to admire the most beautifull celestial rings of the galaxy!", price: 57, place: "solar system", user: User.all.sample, genre: Genre.all.sample },
