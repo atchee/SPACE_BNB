@@ -1,6 +1,27 @@
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images2.alphacoders.com/542/thumb-1920-542730.png);">
+  <%# <div  style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images2.alphacoders.com/542/thumb-1920-542730.png);">
       <p>For you next holiday destination, aim for the stars!</p>
+  </div> %>
+<div id="carouselExampleControls" class="carousel slide banner" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://res.cloudinary.com/dryhvwfvf/image/upload/v1653642605/development/banner-marsa-attack_jst6bl.png" class="d-block w-100" alt="banner-mars-attack">
+    </div>
+    <div class="carousel-item">
+      <img src="https://res.cloudinary.com/dryhvwfvf/image/upload/v1653642606/development/banner-spaceship_bq8rih.png" class="d-block w-100" alt="banner-valentins-day">
+    </div>
+    <div class="carousel-item">
+      <img src="https://res.cloudinary.com/dryhvwfvf/image/upload/v1653642605/development/banner-saturn_buvrms.png" class="d-block w-100" alt="banner-spring-break">
+    </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 <div class="container">
     <div class="cards">
@@ -12,10 +33,10 @@
 
           <% if product.photos.present? %>
           <%# START CARROUSEL %>
-            <div id="carouselExampleDark-<%=product.id%>" class="carousel carousel-dark slide m-0 p-0" data-bs-ride="carousel">
+            <div id="carouselExampleDark-<%=product.id%>" class="carousel carousel-dark slide m-0 p-0"> <%#data-bs-ride="carousel"%>
               <div class="carousel-inner">
                   <% product.photos.each_with_index do |photo, index| %>
-                    <div class="carousel-item <%="active" if index == 0%>" data-bs-interval="2000">
+                    <div class="carousel-item <%="active" if index == 0%>"> <%#data-bs-interval="2000"%>
                       <%= cl_image_tag photo.key, height: 257, width: 386, crop: :fill, class: "d-block w-100" %>
                       <div class="carousel-caption d-none d-md-block">
                       </div>
@@ -42,8 +63,10 @@
 
 
           <div class="card-body">
+            <div class="card-text">
             <p class="card-title"><%= product.name %></p>
             <p class="card-description"><%= product.description %></p>
+            </div>
             <div class="card-price">
               <p><%= product.price %>€/night</p>
             </div>

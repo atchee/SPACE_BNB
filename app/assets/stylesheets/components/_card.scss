@@ -47,6 +47,10 @@
   }
 }
 
+.card-text{
+  height: 140px;
+  position: relative;
+}
 
 .card-body {
 text-align:justify;
@@ -62,6 +66,12 @@ box-sizing: border-box;
 
 .card-description {
   text-align:justify;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  position: absolute;
+  top:60px;
 }
 
 .card-title {
