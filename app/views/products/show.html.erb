@@ -33,16 +33,15 @@
 
       <div id="reservation-detail" data-controller="flatpickr">
         <%= simple_form_for [@product, @rental] do |f| %>
-          <div class="d-flex" style="width: 400px; margin: 0 auto;">
+          <div class="d-flex" style="width: 450px; margin: 0 auto;">
             <div id="arrival">
               <span>Arrival</span>
-
               <p><%= f.input :arrival_date, label: false, as: :string, required: false, input_html: { class: "datepicker", data: { flatpickr_target: "input" } }%></p>
             </div>
-           <div id="departure">
+
+            <div id="departure">
               <span>Departure</span>
               <p><%= f.input :departure_date, label: false, as: :string, required: false, input_html: { class: "datepicker", data: { flatpickr_target: "input" } } %></p>
-
             </div>
           </div>
           <% if user_signed_in? %>
@@ -61,10 +60,10 @@
     </div>
   </div>
 
+  <%= link_to "<<", products_path, class:"button-white" %>
   <% if policy(@product).edit? %>
     <%= link_to "Edit", edit_product_path(@product.id), class:"button-white" %>
   <% end %>
-  <%= link_to "<<", products_path, class:"button-white" %>
 </div>
 
 
