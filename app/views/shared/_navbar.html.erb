@@ -14,20 +14,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-
           <li class="nav-item dropdown">
-            <%= image_tag "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/58675136_10156465562673020_8357413523680133120_n.png?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=3wi9fia8wPQAX8ipC0D&_nc_ht=scontent-cdg2-1.xx&oh=00_AT9wi7NPMQmh-rATh50eLeU-8Lbn9tbYigKpvuz-DpyvcA&oe=62B507A6", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My profile", profile_path, class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
-          <li  class="nav-item">
+          <li id="button_home" class="nav-item">
           <%# <h1>test</h1> %>
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
