@@ -1,0 +1,22 @@
+#button_home{
+
+  text-align: center;
+  flex: 0 0 auto;
+  margin: 0 10px;
+  height: 40px;
+
+  cursor: pointer;
+
+  color: #351C31;
+  background: none;
+  border: solid #88bfa4;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #88bfa464 ;
+  letter-spacing: 1px;
+
+  &:hover {
+    background-color: #88bfa4;
+    color: white;
+  }
+
+}
