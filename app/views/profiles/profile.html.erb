@@ -61,6 +61,7 @@
             <div id="product-card-booking-date">
               <p>From : <%= rental.arrival_date %></p>
               <p>Until : <%= rental.departure_date %></p>
+              <p>Price : <%= rental.total_price %>€</p>
             </div>
             <%= link_to "Cancel my booking", rental_path(rental), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"button-orange" %>
           </div>
